@@ -1,4 +1,6 @@
-# Go 基于原生库驱动 driver 输出 SQL 日志/ 监控 / 链路追踪方案
+# Go 基于原生库驱动 Driver 输出 SQL 日志 / 监控 / 链路追踪方案
+
+<img width="1915" alt="black" src="https://user-images.githubusercontent.com/34846850/141688315-7ff4a46a-b978-48dd-8de7-51fcd6c4108e.png">
 
 笔者曾经分享过两篇文章，分别是基于 GORM V2 和 XORM 在分布式链路追踪上的建设，此后偶尔有网友联系笔者进行交流，主要围绕项目使用 GORM V1 或者原生 SQL的情况下，在尽可能少侵入业务代码的情况下做数据库操作的日志输出、错误监控和链路追踪。
 
@@ -415,8 +417,8 @@ PASS
 
 ## 参考资料
 
-- Github - sqlhooks-example：https://github.com/avtion/sqlhooks-exmaple
-- Github - SQLHooks：  https://github.com/qustavo/sqlhooks
-- Go 语言设计与实现 - 数据库：https://draveness.me/golang/docs/part4-advanced/ch09-stdlib/golang-database-sql
-- Github - SQLX：https://github.com/jmoiron/sqlx
-- GORM：https://gorm.io
+- [Github - sqlhooks-example](https://github.com/avtion/sqlhooks-exmaple)
+- [Github - SQLHooks](https://github.com/qustavo/sqlhooks)
+- [Go 语言设计与实现 - 数据库](https://draveness.me/golang/docs/part4-advanced/ch09-stdlib/golang-database-sql)
+- [Github - SQLX](https://github.com/jmoiron/sqlx)
+- [GORM](https://gorm.io)
