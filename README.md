@@ -43,7 +43,7 @@ type Hooks interface {
 
 为了能更好呈现效果，本文的实践中加入了 SQL 耗时，通常该功能是在数据库中实现并呈现给 DBA 人员查询，但我们开发人员一般也需要该指标用于确定 SQL 质量。
 
-首先我们定义 zapHook 结构体，该结构体包括一个 `zap logger` 对象和用于启用 SQL 耗时计算的布尔值。
+首先我们定义 `zapHook` 结构体，该结构体包括一个 zap `logger` 对象和用于启用 SQL 耗时计算的布尔值。
 
 ```go
 // make sure zapHook implement all sqlhooks interface.
