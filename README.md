@@ -13,7 +13,7 @@
 
 本文内容主要为第一步和第二步，后续 Prometheus 和 Opentracing 相关内容日后有机会更新，文章所用到的代码均已开源，有问题可以自行查阅，[Github - sqlhooks-example](https://github.com/avtion/sqlhooks-exmaple) 。
 
-## SQLHooks 在 sql.Driver 上挂载钩子函数
+## 自定义驱动
 
 众所周知 `database/sql` 原生库提供的是 `interface{}` 接口定义，在进行数据库操作时通常都是借助 `driver.Driver` 和 `driver.Conn`进行的，关于这部分内容可以阅读 [Go 语言设计与实现 - 数据库](https://draveness.me/golang/docs/part4-advanced/ch09-stdlib/golang-database-sql/) 内容进行了解。
 
@@ -149,7 +149,7 @@ func initZapHook(log *zap.Logger) {
 
 接下来我们就可以借助该钩子函数输出全部 DB 框架生成的 SQL 的日志。 
 
-## 原生 SQL、 SQLX 框架以及 GORM 框架实践
+## 业务实践
 
 在进行本文实践过程前，您需要了解本文基于以下环境进行。
 
