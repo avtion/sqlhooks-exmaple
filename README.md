@@ -17,7 +17,7 @@
 
 既然如此，我们只需要在 Diver 和 Conn 上面封装一层就能实现全量 SQL 日志打印和监控。
 
-在尽量避免造轮子的前提下，笔者借助 Github 开源项目 `SQLHooks` 进行实践。**值得注意的是，如果您需要应用到生产环境，可参考开源项目自行封装**。
+在尽量避免造轮子的前提下，笔者借助 Github 开源项目 [SQLHooks](https://github.com/qustavo/sqlhooks) 进行实践。**值得注意的是，如果您需要应用到生产环境，可参考开源项目自行封装**。
 
 SQLHooks 的原理非常简单，封装了一个 [Driver](https://github.com/qustavo/sqlhooks/blob/master/sqlhooks.go#L40) 实现原生库 `driver.Driver`，在调用 Exec、Query 以及 Prepare 等操作函数时调用开发者传入的钩子函数。
 
@@ -128,7 +128,7 @@ func (z *zapHook) OnError(_ context.Context, err error, query string, args ...in
 import (
 	"database/sql"
   
-  "github.com/go-sql-driver/mysql"
+	"github.com/go-sql-driver/mysql"
 )
 
 // 覆盖驱动名 mysql 会导致 panic, 因此需要创建新的驱动.
