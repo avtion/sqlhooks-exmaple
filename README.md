@@ -274,7 +274,7 @@ func rawSQLExample() {
 
 编写完业务代码之后我们可以运行单元测试检验效果。
 
-```json
+```shell
 === RUN   Test_zapHook
 2021-11-14T22:00:07.255+0800	INFO	sqlhooks-exmaple/zap_example_test.go:41	going using database/sql exec sql
 2021-11-14T22:00:07.256+0800	INFO	sqlhooks-exmaple/zap.go:54	log before sql exec	{"query": "INSERT INTO test_table (score) VALUES (?)", "args": [6720357018880391204]}
@@ -331,7 +331,7 @@ func sqlxExample() {
 
 运行单元测试我们获得对应的输出效果。
 
-```json
+```shell
 === RUN   Test_zapHook
 2021-11-14T22:24:50.118+0800	INFO	sqlhooks-exmaple/zap_example_test.go:78	going using jmoiron/sqlx exec sql
 2021-11-14T22:24:50.119+0800	INFO	sqlhooks-exmaple/zap.go:54	log before sql exec	{"query": "INSERT INTO test_table (score) VALUES (?),(?),(?)", "args": [415829244009450172,3465963981601780078,2197712931404613967]}
@@ -383,7 +383,7 @@ func gormExample() {
 
 运行单元测试，我们可以得到输出效果。
 
-```json
+```shell
 === RUN   Test_zapHook
 2021-11-14T22:43:02.364+0800	INFO	sqlhooks-exmaple/zap_example_test.go:111	going using gorm V2 exec sql
 2021-11-14T22:43:02.365+0800	INFO	sqlhooks-exmaple/zap.go:54	log before sql exec	{"query": "SELECT VERSION()"}
