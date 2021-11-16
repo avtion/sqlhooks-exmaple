@@ -278,12 +278,12 @@ func rawSQLExample() {
 
 ```shell
 === RUN   Test_zapHook
-2021-11-14T22:00:07.255+0800	INFO	sqlhooks-exmaple/zap_example_test.go:41	going using database/sql exec sql
-2021-11-14T22:00:07.256+0800	INFO	sqlhooks-exmaple/zap.go:54	log before sql exec	{"query": "INSERT INTO test_table (score) VALUES (?)", "args": [6720357018880391204]}
-2021-11-14T22:00:07.261+0800	INFO	sqlhooks-exmaple/zap.go:72	log after sql exec	{"duration": "4.728028ms", "query": "INSERT INTO test_table (score) VALUES (?)", "args": [6720357018880391204]}
-2021-11-14T22:00:07.261+0800	INFO	sqlhooks-exmaple/zap.go:54	log before sql exec	{"query": "SELECT * FROM test_table"}
-2021-11-14T22:00:07.262+0800	INFO	sqlhooks-exmaple/zap.go:72	log after sql exec	{"duration": "1.098115ms", "query": "SELECT * FROM test_table"}
-2021-11-14T22:00:07.262+0800	INFO	sqlhooks-exmaple/zap_example_test.go:73	- id: 30095, score: 6720357018880391204, createAt: 2021-11-14 22:00:07 +0800 CST, updateAt: 2021-11-14 22:00:07 +0800 CST
+going using database/sql exec sql
+log before sql exec	{"query": "INSERT INTO test_table (score) VALUES (?)", "args": [6720357018880391204]}
+log after sql exec	{"duration": "4.728028ms", "query": "INSERT INTO test_table (score) VALUES (?)", "args": [6720357018880391204]}
+log before sql exec	{"query": "SELECT * FROM test_table"}
+log after sql exec	{"duration": "1.098115ms", "query": "SELECT * FROM test_table"}
+- id: 30095, score: 6720357018880391204, createAt: 2021-11-14 22:00:07 +0800 CST, updateAt: 2021-11-14 22:00:07 +0800 CST
 --- PASS: Test_zapHook (0.01s)
 PASS
 ```
@@ -335,12 +335,12 @@ func sqlxExample() {
 
 ```shell
 === RUN   Test_zapHook
-2021-11-14T22:24:50.118+0800	INFO	sqlhooks-exmaple/zap_example_test.go:78	going using jmoiron/sqlx exec sql
-2021-11-14T22:24:50.119+0800	INFO	sqlhooks-exmaple/zap.go:54	log before sql exec	{"query": "INSERT INTO test_table (score) VALUES (?),(?),(?)", "args": [415829244009450172,3465963981601780078,2197712931404613967]}
-2021-11-14T22:24:50.124+0800	INFO	sqlhooks-exmaple/zap.go:72	log after sql exec	{"duration": "4.85822ms", "query": "INSERT INTO test_table (score) VALUES (?),(?),(?)", "args": [415829244009450172,3465963981601780078,2197712931404613967]}
-2021-11-14T22:24:50.124+0800	INFO	sqlhooks-exmaple/zap.go:54	log before sql exec	{"query": "SELECT * FROM test_table"}
-2021-11-14T22:24:50.125+0800	INFO	sqlhooks-exmaple/zap.go:72	log after sql exec	{"duration": "1.119153ms", "query": "SELECT * FROM test_table"}
-2021-11-14T22:24:50.125+0800	INFO	sqlhooks-exmaple/zap_example_test.go:106	- id: 30096, score: 415829244009450172, createAt: 2021-11-14 22:24:50 +0800 CST, updateAt: 2021-11-14 22:24:50 +0800 CST
+going using jmoiron/sqlx exec sql
+log before sql exec	{"query": "INSERT INTO test_table (score) VALUES (?),(?),(?)", "args": [415829244009450172,3465963981601780078,2197712931404613967]}
+log after sql exec	{"duration": "4.85822ms", "query": "INSERT INTO test_table (score) VALUES (?),(?),(?)", "args": [415829244009450172,3465963981601780078,2197712931404613967]}
+log before sql exec	{"query": "SELECT * FROM test_table"}
+log after sql exec	{"duration": "1.119153ms", "query": "SELECT * FROM test_table"}
+- id: 30096, score: 415829244009450172, createAt: 2021-11-14 22:24:50 +0800 CST, updateAt: 2021-11-14 22:24:50 +0800 CST
 - id: 30097, score: 3465963981601780078, createAt: 2021-11-14 22:24:50 +0800 CST, updateAt: 2021-11-14 22:24:50 +0800 CST
 - id: 30098, score: 2197712931404613967, createAt: 2021-11-14 22:24:50 +0800 CST, updateAt: 2021-11-14 22:24:50 +0800 CST
 --- PASS: Test_zapHook (0.01s)
@@ -387,14 +387,14 @@ func gormExample() {
 
 ```shell
 === RUN   Test_zapHook
-2021-11-14T22:43:02.364+0800	INFO	sqlhooks-exmaple/zap_example_test.go:111	going using gorm V2 exec sql
-2021-11-14T22:43:02.365+0800	INFO	sqlhooks-exmaple/zap.go:54	log before sql exec	{"query": "SELECT VERSION()"}
-2021-11-14T22:43:02.366+0800	INFO	sqlhooks-exmaple/zap.go:72	log after sql exec	{"duration": "274.358µs", "query": "SELECT VERSION()"}
-2021-11-14T22:43:02.367+0800	INFO	sqlhooks-exmaple/zap.go:54	log before sql exec	{"query": "INSERT INTO `test_table` (`score`) VALUES (?),(?),(?)", "args": [6926252270182587172,1587531254996719592,6405207277469356629]}
-2021-11-14T22:43:02.370+0800	INFO	sqlhooks-exmaple/zap.go:72	log after sql exec	{"duration": "3.442791ms", "query": "INSERT INTO `test_table` (`score`) VALUES (?),(?),(?)", "args": [6926252270182587172,1587531254996719592,6405207277469356629]}
-2021-11-14T22:43:02.437+0800	INFO	sqlhooks-exmaple/zap.go:54	log before sql exec	{"query": "SELECT * FROM `test_table`"}
-2021-11-14T22:43:02.438+0800	INFO	sqlhooks-exmaple/zap.go:72	log after sql exec	{"duration": "1.187731ms", "query": "SELECT * FROM `test_table`"}
-2021-11-14T22:43:02.438+0800	INFO	sqlhooks-exmaple/zap_example_test.go:133	- id: 30099, score: 6926252270182587172, createAt: 2021-11-14 22:43:02 +0800 CST, updateAt: 2021-11-14 22:43:02 +0800 CST
+going using gorm V2 exec sql
+log before sql exec	{"query": "SELECT VERSION()"}
+log after sql exec	{"duration": "274.358µs", "query": "SELECT VERSION()"}
+log before sql exec	{"query": "INSERT INTO `test_table` (`score`) VALUES (?),(?),(?)", "args": [6926252270182587172,1587531254996719592,6405207277469356629]}
+log after sql exec	{"duration": "3.442791ms", "query": "INSERT INTO `test_table` (`score`) VALUES (?),(?),(?)", "args": [6926252270182587172,1587531254996719592,6405207277469356629]}
+log before sql exec	{"query": "SELECT * FROM `test_table`"}
+log after sql exec	{"duration": "1.187731ms", "query": "SELECT * FROM `test_table`"}
+- id: 30099, score: 6926252270182587172, createAt: 2021-11-14 22:43:02 +0800 CST, updateAt: 2021-11-14 22:43:02 +0800 CST
 - id: 30100, score: 1587531254996719592, createAt: 2021-11-14 22:43:02 +0800 CST, updateAt: 2021-11-14 22:43:02 +0800 CST
 - id: 30101, score: 6405207277469356629, createAt: 2021-11-14 22:43:02 +0800 CST, updateAt: 2021-11-14 22:43:02 +0800 CST
 --- PASS: Test_zapHook (0.07s)
